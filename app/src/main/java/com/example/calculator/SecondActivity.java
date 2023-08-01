@@ -11,15 +11,20 @@ import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
 
-    TextView textView = findViewById(R.id.tv_curr);
-    Button button = findViewById(R.id.btn_export);
+
+    private TextView textView;
+    private Button button;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        textView.setText(getIntent().getStringExtra("result"));
+        textView = findViewById(R.id.tv_curr);
+        button = findViewById(R.id.btn_export);
+
+
     }
 
     @Override
@@ -31,5 +36,6 @@ public class SecondActivity extends AppCompatActivity {
                 finishAffinity();
             }
         });
+        textView.setText(getIntent().getStringExtra("result"));
     }
 }

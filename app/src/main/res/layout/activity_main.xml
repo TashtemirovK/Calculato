@@ -56,25 +56,28 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_clear"
                 style="@style/Gray.Button"
-                android:onClick="onNumberClick"
+                android:onClick="onOperationClick"
                 android:text="AC" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_plus_minus"
                 style="@style/Gray.Button"
                 android:layout_marginHorizontal="18dp"
+                android:onClick="onOperationClick"
                 android:text="+/-" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_percent"
                 style="@style/Gray.Button"
                 android:layout_marginEnd="18dp"
+                android:onClick="onOperationClick"
                 android:text="%" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_devide"
                 style="@style/Orange.Button"
                 android:backgroundTint="@color/orange"
+                android:onClick="onOperationClick"
                 android:text="/" />
 
 
@@ -90,24 +93,28 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_seven"
                 style="@style/Gray.Dark.Button"
+                android:onClick="onNumberClick"
                 android:text="7" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_eight"
                 style="@style/Gray.Dark.Button"
                 android:layout_marginHorizontal="18dp"
+                android:onClick="onNumberClick"
                 android:text="8" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_nine"
                 style="@style/Gray.Dark.Button"
                 android:layout_marginEnd="18dp"
+                android:onClick="onNumberClick"
                 android:text="9" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_multiplication"
                 style="@style/Orange.Button"
                 android:backgroundTint="@color/orange"
+                android:onClick="onOperationClick"
                 android:text="X" />
 
 
@@ -123,24 +130,28 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_four"
                 style="@style/Gray.Dark.Button"
+                android:onClick="onNumberClick"
                 android:text="4" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_five"
                 style="@style/Gray.Dark.Button"
                 android:layout_marginHorizontal="18dp"
+                android:onClick="onNumberClick"
                 android:text="5" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_six"
                 style="@style/Gray.Dark.Button"
                 android:layout_marginEnd="18dp"
+                android:onClick="onNumberClick"
                 android:text="6" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_minus"
                 style="@style/Orange.Button"
                 android:backgroundTint="@color/orange"
+                android:onClick="onOperationClick"
                 android:text="-" />
 
 
@@ -170,6 +181,7 @@
                 android:id="@+id/bnt_three"
                 style="@style/Gray.Dark.Button"
                 android:layout_marginEnd="18dp"
+                android:onClick="onNumberClick"
                 android:text="3" />
 
             <com.google.android.material.button.MaterialButton
@@ -195,12 +207,14 @@
                 android:paddingStart="32dp"
                 android:paddingEnd="0dp"
                 android:text="0"
+                android:onClick="onNumberClick"
                 android:textAlignment="textStart" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_dot"
                 style="@style/Gray.Dark.Button"
                 android:layout_marginHorizontal="18dp"
+                android:onClick="onOperationClick"
                 android:text="." />
 
             <com.google.android.material.button.MaterialButton

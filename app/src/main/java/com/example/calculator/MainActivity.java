@@ -26,16 +26,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.text_view);
         next = findViewById(R.id.next_menu);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                String resultNum = textView.getText().toString();
+                String resultNum = ((TextView) findViewById(R.id.text_view)).getText().toString();
                 intent.putExtra("result", resultNum);
                 startActivity(intent);
             }
@@ -45,32 +40,25 @@ public class MainActivity extends AppCompatActivity {
     public void onNumberClick(View view) {
         if (view.getId() == R.id.btn_one) {
             appendNumber("1");
-        }
-        if (view.getId() == R.id.btn_two) {
+        } else if (view.getId() == R.id.btn_two) {
             appendNumber("2");
-        }
-        if (view.getId() == R.id.bnt_three) {
+        } else if (view.getId() == R.id.bnt_three) {
             appendNumber("3");
-        }
-        if (view.getId() == R.id.btn_four) {
+        } else if (view.getId() == R.id.btn_four) {
             appendNumber("4");
-        }
-        if (view.getId() == R.id.btn_five) {
+        } else if (view.getId() == R.id.btn_five) {
             appendNumber("5");
-        }
-        if (view.getId() == R.id.btn_six) {
+        } else if (view.getId() == R.id.btn_six) {
             appendNumber("6");
-        }
-        if (view.getId() == R.id.btn_seven) {
+        } else if (view.getId() == R.id.btn_seven) {
             appendNumber("7");
-        }
-        if (view.getId() == R.id.btn_eight) {
+        } else if (view.getId() == R.id.btn_eight) {
             appendNumber("8");
-        }
-        if (view.getId() == R.id.btn_nine) {
+        } else if (view.getId() == R.id.btn_nine) {
             appendNumber("9");
+        } else if (view.getId() == R.id.btn_zero) {
+            appendNumber("0");
         }
-        isOperationClick = false;
     }
 
     public void onOperationClick(View view) {
@@ -122,8 +110,7 @@ public class MainActivity extends AppCompatActivity {
             first = Double.parseDouble(textView.getText().toString());
             isOperationClick = true;
         }
-        next.setVisibility(view.getId());
-
+        next.setVisibility(view.getVisibility());
     }
 
     public String canselDouble(Double result) {
@@ -137,10 +124,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void appendNumber(String number) {
         next.setVisibility(View.VISIBLE);
-        if (textView.getText().toString().equals("0") || isOperationClick) {
+        if (textView.getText().toString().equals("0")) {
+            textView.setText(number);
+        } else if (isOperationClick) {
             textView.setText(number);
         } else {
             textView.append(number);
         }
+        isOperationClick = false;
     }
 }
